@@ -21,8 +21,8 @@ constructor(private service:ServicesService){}
   getCurrentLocation(){
     if (navigator.geolocation){
       navigator.geolocation.getCurrentPosition((position)=>{
-        this.latitude = '11.266885'
-        this.longitude = '75.816361'
+        this.latitude = position.coords.latitude
+        this.longitude = position.coords.longitude
         console.log(this.latitude,this.longitude)
         const locationForm = new FormData()
         locationForm.append('latitude',this.latitude)
